@@ -1,0 +1,11 @@
+- name: Install Android SDK
+  unarchive: src=http://dl.google.com/android/android-sdk_r24.4.1-linux.tgz dest=/opt copy=no
+
+- name: Install Android SDK Components
+  shell: echo y | /opt/android-sdk-linux/tools/android update sdk -a --no-ui --filter {{item}}
+  with_items:
+    - android-23
+    - build-tools-23.0.1
+    - extra-google-google_play_services
+    - extra-google-m2repository
+    - extra-android-m2repository
