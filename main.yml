@@ -25,12 +25,6 @@
    dest=/opt/android-sdk_r23.0.2-linux.tar.gz
   register: sdk_file
 
-- name: Unarchive sdk tools
-  command: >
-    tar xzf {{ sdk_file.dest }}
-    creates=/opt/android-sdk-linux
-    chdir=/opt
-
 - name: Set envs for android sdk
   copy: >
     src=android.sh
