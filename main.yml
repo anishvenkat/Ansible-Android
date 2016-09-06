@@ -1,4 +1,4 @@
----
+------
 
 - name: Install packages to install android sdk
   yum: name={{ item }} state=installed
